@@ -1,11 +1,11 @@
 function memo() {
-  const submit = document.getElementById("submit")
-  submit.addEventListener("click", (e) {
+  const submit = document.getElementById("submit");
+  submit.addEventListener("click", (e) => {
     const formData = new FormData(document.getElementById("form"));
     const XHR = new XMLHttpRequest();
     XHR.open("POST", "/posts", true);
     XHR.responseType = "json";
-    XHR.send(formData)
+    XHR.send(formData);
     XHR.onload = () => {
       if (XHR.status != 200) {
         alert(`Error ${XHR.status}: ${XHR.statusText}`);
@@ -28,5 +28,5 @@ function memo() {
     };
     e.preventDefault();
   });
-}
-window.addEventListener("load", memo);
+ }
+ window.addEventListener("load", memo);
